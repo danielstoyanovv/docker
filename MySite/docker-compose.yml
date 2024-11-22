@@ -1,0 +1,13 @@
+  services:
+    mongodb:
+      image: mongodb:7.0.12
+      container_name: app_db
+      volumes:
+        - mongodb-data:/data/db
+      #environment:
+       #   MONGO_INITDB_ROOT_USERNAME: root
+        #  MONGO_INITDB_ROOT_PASSWORD: example
+      env_file:
+        - ./mongodb/.env
+  volumes:
+    mongodb-data:
